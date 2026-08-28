@@ -18,7 +18,7 @@ El nucleo de esta implementacion se basa en el uso de clausuras (closures), las 
 Para verificar la ejecucion en una maquina limpia, siga los siguientes pasos desde la terminal:
 
 1. Clonar el repositorio de forma local:
-   git clone https://github.com
+   git clone https://github.com/HulkGamerGt/Progra_avanzada
 
 2. Desplazarse al directorio del proyecto:
    cd Progra_avanzada
