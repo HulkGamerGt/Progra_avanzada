@@ -10,3 +10,25 @@ data class Rchz(val idSol: String, val mtv: String)
 // Estado acumulado del sistema: guarda la lista de asignaciones exitosas y las rechazadas
 data class Est(val asigs: List<Asig> = emptyList(), val rchzs: List<Rchz> = emptyList())
 
+fun main() {
+    val catSalas = listOf(
+        Sala("S1", 30, setOf("Proyector", "Pizarra")),
+        Sala("S2", 15, setOf("TV")),
+        Sala("S3", 50, setOf("Proyector", "Pizarra", "Audio"))
+    )
+
+    val flujoSols = listOf(
+        Sol("Req1", "10:00", 20, setOf("Proyector")),
+        Sol("Req2", "10:00", 10, setOf("TV")),
+        Sol("Req3", "10:00", 40, setOf("MacBook")),
+        Sol("Req4", "10:00", 25, setOf("Proyector"))
+    )
+
+    val resFinal = procFlujo(flujoSols, catSalas)
+
+    println("Asignaciones Aceptadas:")
+    resFinal.asigs.forEach { println(" -> Solicitud ${it.idSol} en Sala ${it.idSala} a las ${it.hr}") }
+
+    println("\nSolicitudes Rechazadas:")
+    resFinal.rchzs.forEach { println(" -> Solicitud ${it.idSol} rechazada. Motivo: ${it.mtv}") }
+}
