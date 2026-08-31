@@ -35,8 +35,22 @@ fun main() {
 
 fun procFlujo(sols: List<Sol>, cat: List<Sala>): Est {
     
+    /* 
+       PUNTO 1 (Concepto Diferencial: Clausura Léxica):
+       La expresión lambda pasada a 'fold' actúa como una clausura. Captura la variable 'cat'
+       (el catálogo) del ámbito de la función exterior 'procFlujo', permitiendo operar
+       de forma pura sin depender de variables globales mutables.
+    */
+
     return sols.fold(Est()) { estAct, solAct ->
         
+        /* 
+           PUNTO 2 (Concepto Diferencial: Clausura Léxica):
+           La función 'firstOrNull' recibe una lambda que captura las variables 'solAct' y 'estAct'
+           desde su entorno léxico envolvente. Esto inyecta el contexto de la iteración actual
+           directamente en la condición de búsqueda.
+        */
+
         val salaOpt = cat.firstOrNull { sl ->
             cumpleReq(sl, solAct) && isDisp(sl, solAct.hr, estAct.asigs)
         }
@@ -45,6 +59,12 @@ fun procFlujo(sols: List<Sol>, cat: List<Sala>): Est {
             val nvaAsig = Asig(solAct.idSol, salaOpt.id, solAct.hr)
             Est(estAct.asigs + nvaAsig, estAct.rchzs)
         } else {
+            
+            /* 
+               PUNTO 3 (Concepto Diferencial: Clausura Léxica):
+               La lambda pasada a 'any' captura 'solAct' del entorno externo para verificar
+               si el problema fue el horario o los requisitos físicos, todo sin modificar estados.
+            */
             
             val cumpleCapEq = cat.any { sl -> cumpleReq(sl, solAct) }
             val motivo = if (cumpleCapEq) "Sala idónea ocupada en el horario ${solAct.hr}"
