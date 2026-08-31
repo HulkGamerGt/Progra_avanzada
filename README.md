@@ -40,14 +40,14 @@ El codigo fuente incluye comentarios explicitos en los tres puntos donde el conc
 ## Enlaces a Recursos Obligatorios
 
 * Video Demostrativo (Maximo 5 minutos): [Insertar enlace aqui]
-* Bitacora de Interaccion con Inteligencia Artificial (Normativa Articulo 67): [Insertar enlace de la conversacion compartida aqui]
+* Bitacora de Interaccion con Inteligencia Artificial (Normativa Articulo 67): [https://share. gemini.google/aMOxhTtNSqMq]
 
 ## Integrantes del Equipo
 
 * Joaquin Vasquez Gomez
 * Diego Solis Rojas
 * Javier Flores Espindola
-* Camilo Rifo Cordova
+* Camilo Riffo Cordova
 * Isidora Hormazabal Gallegos
 
 Académico: Nicolás A. Reyes Reyes
