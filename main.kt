@@ -32,3 +32,34 @@ fun main() {
     println("\nSolicitudes Rechazadas:")
     resFinal.rchzs.forEach { println(" -> Solicitud ${it.idSol} rechazada. Motivo: ${it.mtv}") }
 }
+
+fun procFlujo(sols: List<Sol>, cat: List<Sala>): Est {
+    
+    return sols.fold(Est()) { estAct, solAct ->
+        
+        val salaOpt = cat.firstOrNull { sl ->
+            cumpleReq(sl, solAct) && isDisp(sl, solAct.hr, estAct.asigs)
+        }
+
+        if (salaOpt != null) {
+            val nvaAsig = Asig(solAct.idSol, salaOpt.id, solAct.hr)
+            Est(estAct.asigs + nvaAsig, estAct.rchzs)
+        } else {
+            
+            val cumpleCapEq = cat.any { sl -> cumpleReq(sl, solAct) }
+            val motivo = if (cumpleCapEq) "Sala idónea ocupada en el horario ${solAct.hr}"
+                         else "Capacidad o equipamiento insuficiente en catálogo"
+
+            val nvoRchz = Rchz(solAct.idSol, motivo)
+            Est(estAct.asigs, estAct.rchzs + nvoRchz)
+        }
+    }
+}
+
+fun cumpleReq(sl: Sala, sol: Sol): Boolean {
+    return sl.cap >= sol.asis && sol.eqReq.all { req -> sl.eq.contains(req) }
+}
+
+fun isDisp(sl: Sala, hr: String, asigs: List<Asig>): Boolean {
+    return asigs.none { asig -> asig.idSala == sl.id && asig.hr == hr }
+}
