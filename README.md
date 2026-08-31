@@ -18,7 +18,7 @@ El nucleo de esta implementacion se basa en el uso de clausuras (closures), las 
 Para verificar la ejecucion en una maquina limpia, siga los siguientes pasos desde la terminal:
 
 1. Clonar el repositorio de forma local:
-   git clone https://github.com/HulkGamerGt/Progra_avanzada
+   git clone https://github.com/HulkGamerGt
 
 2. Desplazarse al directorio del proyecto:
    cd Progra_avanzada
@@ -34,7 +34,9 @@ Para verificar la ejecucion en una maquina limpia, siga los siguientes pasos des
 El codigo fuente incluye comentarios explicitos en los tres puntos donde el concepto diferencial determina la solucion:
 
 1. Punto 1 (Funcion procFlujo - Expresion fold): La clausura pasada a fold captura el catalogo de salas (cat) del entorno externo, permitiendo su consulta iterativa sin depender de un estado global.
+
 2. Punto 2 (Funcion procFlujo - Expresion firstOrNull): La clausura interna captura de manera dinamica la solicitud actual (solAct) y el estado acumulado (estAct) para evaluar restricciones en tiempo de ejecucion sin mutar datos.
+
 3. Punto 3 (Funcion cumpleReq - Expresion all): La clausura en la funcion de orden superior all captura el equipamiento de la sala (sl.eq) para aislar la verificacion de subconjuntos.
 
 ## Enlaces a Recursos Obligatorios
