@@ -39,8 +39,9 @@ El codigo fuente incluye comentarios explicitos en los tres puntos donde el conc
 
 ## Enlaces a Recursos Obligatorios
 
-* Video Demostrativo (Maximo 5 minutos): [Insertar enlace aqui]
-* Bitacora de Interaccion con Inteligencia Artificial (Normativa Articulo 67): [https://share. gemini.google/aMOxhTtNSqMq]
+* Video Demostrativo (Maximo 5 minutos):[https://github.com/HulkGamerGt/Progra_avanzada/blob/main/Paradigmas_de_la_programacion_codigo.mp4]
+
+* Bitacora de Interaccion con Inteligencia Artificial (Normativa Articulo 67): [https://share.gemini.google/aMOxhTtNSqMq]
 
 ## Integrantes del Equipo
 
