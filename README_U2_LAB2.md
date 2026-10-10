@@ -1,7 +1,6 @@
  BiblioApp
 
 Integrantes: (Diego Solis R. , Joaquin Vasquez G.) LAB 1 && (Javier Flores E. , Benjamin Ruz B.) LAB 3
-
 Sección: LAB 1 - LAB 3. 
 Asignatura: Programación Avanzada INF-223  
 Docentes: Bruno Faúndez Valenzuela  
